@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.textfield.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.AnchorPane?>
+ 
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PizzaController">
+	<top>
+		<VBox alignment="CENTER" styleClass="header">
+			<children>
+				<Label styleClass="title1" text="Domlno's Pizza"/>
+				<Label text="By Alastair Noble"/>
+			</children>
+		</VBox>
+	</top>
+	<left>
+		
+	</left>
+	<center>
+		<VBox id="mainBox">
+			<children >
+				<Label/>
+				<Label styleClass="title" text="Add New Pizza"/>
+				<Label/>				
+				<Label/>
+				<Label fx:id="currentPizzaCost" text="Cost of this Pizza: $7.00"/>
+				
+				
+				<HBox >
+					<children>
+					
+						<VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="210.0" spacing="10.0">
+					         <children>
+					         	<Label text="Size:"/>
+					         	
+					         	<RadioButton onAction="#currentPizza" fx:id="Small" mnemonicParsing="false" text="Small">
+						         	<toggleGroup>
+					                  <ToggleGroup  fx:id="RadioSize" />
+					               </toggleGroup>
+					            </RadioButton>	
+					            <RadioButton onAction="#currentPizza" id="Medium" mnemonicParsing="false" text="Medium" toggleGroup="$RadioSize" />
+					            <RadioButton onAction="#currentPizza" id="Large" mnemonicParsing="false" text="Large" toggleGroup="$RadioSize" />
+					         </children>
+					      </VBox>
+					      <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="210.0" spacing="10.0">
+					         <children>
+					         	<Label text="Cheese:"/>
+					         	
+					         	<RadioButton onAction="#currentPizza" fx:id="Single" mnemonicParsing="false" text="Single" >
+						         	<toggleGroup>
+						                  <ToggleGroup fx:id="RadioCheese" />
+						               </toggleGroup>
+					            </RadioButton>	
+					            <RadioButton onAction="#currentPizza" id="Double" mnemonicParsing="false" text="Double" toggleGroup="$RadioCheese" />
+					         </children>
+					      </VBox>
+					      
+					      <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="210.0" spacing="10.0">
+					         <children>
+					         	<Label text="Pineapple:"/>
+					         	
+					         	<RadioButton onAction="#currentPizza" id="Single" mnemonicParsing="false" text="Single" >
+						         	<toggleGroup>
+						                  <ToggleGroup fx:id="RadioPineapple" />
+						               </toggleGroup>
+					            </RadioButton>	
+					            <RadioButton onAction="#currentPizza" fx:id="NonePineapple" id="None" mnemonicParsing="false" text="None" toggleGroup="$RadioPineapple" />
+					         </children>
+					      </VBox>
+					      
+					      
+					      <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="210.0" spacing="10.0">
+					         <children>
+					         	<Label text="Pepper:"/>
+					         	
+					         	<RadioButton onAction="#currentPizza" id="Single" mnemonicParsing="false" text="Single" >
+						         	<toggleGroup>
+						                  <ToggleGroup fx:id="RadioPepper" />
+						               </toggleGroup>
+					            </RadioButton>	
+					            <RadioButton onAction="#currentPizza" fx:id="NonePepper" id="None" mnemonicParsing="false" text="None" toggleGroup="$RadioPepper" />
+					         </children>
+					      </VBox>
+							
+							
+					      <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="210.0" spacing="10.0">
+					         <children>
+					         	<Label text="Ham:"/>
+					         	
+					         	<RadioButton onAction="#currentPizza" id="Single" mnemonicParsing="false" text="Single" >
+						         	<toggleGroup>
+						                  <ToggleGroup fx:id="RadioHam" />
+						               </toggleGroup>
+					            </RadioButton>	
+					            <RadioButton onAction="#currentPizza" fx:id="NoneHam" id="None" mnemonicParsing="false" text="None" toggleGroup="$RadioHam" />
+					         </children>
+					      </VBox>
+					</children>	
+					
+				</HBox>
+				
+				<Label styleClass= "addPadding" text="how many pizzas? (1-100)"/>
+				
+				<TextField styleClass="textField" onAction="#currentPizza" fx:id="numPizzas" />
+				<Label text=""/>
+				<Button styleClass="addSpacing" fx:id="addPizza" onAction="#addNewPizza" mnemonicParsing="false" text="Add Pizza"/>
+	
+				<Label fx:id="IllegalMessage" styleClass="illegal"/>
+			</children>
+		</VBox>
+	
+	</center>
+	
+	<right>
+		<VBox styleClass="right">
+		
+			<Label styleClass="title" text="Order:"/>
+			<VBox fx:id="sidebar" styleClass="sidebar">
+	            <children>
+		           
+	            </children>
+	            
+	        </VBox>
+	    	<Label fx:id="orderCost" text="current order cost: $0.00"/>
+		
+		</VBox>
+		 
+         
+	</right>
+	
+	<bottom>
+	
+	</bottom>
+</BorderPane>
+
